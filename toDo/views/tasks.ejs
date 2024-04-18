@@ -143,7 +143,7 @@
               const formData = new FormData(form);
               formData.append("taskId",this.value);
 
-              const response = await fetch(window.location.host+"/users/completeTask", {
+              const response = await fetch("/users/completeTask", {
                 method: "POST",
                 body: formData
               });
@@ -161,7 +161,7 @@
               const formData = new FormData(form);
               formData.append("taskId",this.value);
               
-              const response = await fetch(window.location.host+"/users/deleteTask", {
+              const response = await fetch("/users/deleteTask", {
                 method: "POST",
                 body: formData
               });

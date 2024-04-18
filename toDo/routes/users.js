@@ -31,7 +31,7 @@ router.post("/getusers",async (req,res)=>{
             req.session.users = req.body.email;
             req.session.user_id = data[0].user_Id;
             
-            res.json({key:"/users/loggedin",id:req.session.users});
+            res.json({key:"/users/loggedin"});
             // /
 
         }

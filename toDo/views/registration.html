@@ -85,17 +85,17 @@
         </div>
         <script>
             document.querySelector('#login').addEventListener('click', function(e){
-                window.location.href = window.location.host+'/users/login';
+                window.location.href = '/users/login';
             })
             document.querySelector('#signUp').addEventListener('click', function(e){
-                window.location.href = window.location.host+'/users/sign-up';
+                window.location.href = '/users/sign-up';
             })
             document.querySelector('#saveInfo').addEventListener('click', async function(e){
                 
                 const regInfo = document.querySelector("#regForm");
                 const formData = new FormData(regInfo);
 
-                const response = await fetch(window.location.host+"/users/reg", {
+                const response = await fetch("/users/reg", {
                   method: "POST",
                   body: formData,
                 });
