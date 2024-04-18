@@ -44,10 +44,10 @@ router.get('/logout', function(req, res) {
     res.json({key:"/users/login"});
 });
 router.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, '../views/index.html'));
+    res.sendFile(path.join(__dirname, '../../views/index.html'));
 });
 router.get('/login', function(req, res) {
-    res.sendFile(path.join(__dirname, '../views/login.html'));
+    res.sendFile(path.join(__dirname, '../../views/login.html'));
 });
 router.get('/loggedin', async function(req, res) {
 
@@ -56,11 +56,11 @@ router.get('/loggedin', async function(req, res) {
 
         res.render('tasks.ejs', { data });
     }else{
-        res.sendFile(path.join(__dirname, '../views/login.html'));
+        res.sendFile(path.join(__dirname, '../../views/login.html'));
     }
 });
 router.get('/sign-up', function(req, res) {
-    res.sendFile(path.join(__dirname, '../views/registration.html'));
+    res.sendFile(path.join(__dirname, '../../views/registration.html'));
 });
 
 router.post("/reg",async (req,res)=>{
