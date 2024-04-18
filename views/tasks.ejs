@@ -80,7 +80,7 @@
         </div>
         <script>
           document.querySelector('#logout').addEventListener('click', async function(e){
-            const response = await fetch('http://localhost:5800/users/logout', {
+            const response = await fetch('/users/logout', {
                   method: "get"
                 });
                 alert('Successfully logged out');
@@ -88,7 +88,7 @@
                 window.location.href = res.key
           })
           document.querySelector('#signUp').addEventListener('click', function(e){
-              window.location.href = 'http://localhost:5800/users/sign-up';
+              window.location.href = '/users/sign-up';
           })
           document.querySelector('#addTask').addEventListener('click', async function(e){
             const regInfo = document.querySelector("#loginForm");
@@ -102,7 +102,7 @@
                 taskId = (++(taskArr[taskArr.length - 1].value)); 
             }
             formData.append("taskId",taskId);
-            const response = await fetch("http://localhost:5800/users/addTask", {
+            const response = await fetch("/users/addTask", {
               method: "POST",
               body: formData,
             });
