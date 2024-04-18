@@ -54,12 +54,7 @@ router.get('/loggedin', async function(req, res) {
     if(req.session.users && Object.keys(req.session.users).length){
         const data = await taskToDo.find({userId:req.session.user_id,taskStatus:true});
 
-        ejs.renderFile('./views/tasks.ejs',{ data }, function(err, data) {
-            res.send(err || data);
-        });
-//        res.render('tasks', { data });
-        
-        //res.sendFile(path.join(__dirname, '../views/tasks.html'));
+        res.render('tasks.ejs', { data });
     }else{
         res.sendFile(path.join(__dirname, '../views/login.html'));
     }
